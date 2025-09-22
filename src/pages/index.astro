@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import BecomeCPO from '@/components/sections/become-cpo';
+import FAQ from '@/components/sections/faq';
+import Features from '@/components/sections/features';
+import Hero from '@/components/sections/hero';
+import InReality from '@/components/sections/in-reality';
+import Integrations from '@/components/sections/integrations';
+import PartnerMarquee from '@/components/sections/partner-marquee';
+import Reviews from '@/components/sections/reviews';
+import ValueProposition from '@/components/sections/value-proposition';
+import WhyUs from '@/components/sections/why-us';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+---
+
+<DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <Hero client:load />
+  <ValueProposition client:load />
+  <PartnerMarquee speed={15} gap={64} height={64} client:load />
+  <Reviews client:load />
+  <Features client:load />
+  <Integrations client:load />
+  <FAQ client:load />
+</DefaultLayout>

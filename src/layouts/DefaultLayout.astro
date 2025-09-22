@@ -1,0 +1,28 @@
+---
+import { ClientRouter } from 'astro:transitions';
+
+import BaseHead from '@/components/BaseHead.astro';
+import { NavigationProvider } from '@/components/elements/navigation-provider';
+import Footer from '@/components/layout/footer';
+import Navbar from '@/components/layout/navbar';
+
+const { title, description } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<html lang="en">
+  <head>
+    <ClientRouter />
+    <BaseHead title={title} description={description} />
+    <meta name="view-transition" content="same-origin" />
+  </head>
+  <body class={`h-screen antialiased flex flex-col`}>
+    <NavigationProvider client:load currentPath={currentPath}>
+      <Navbar currentPage={currentPath} client:load />
+      <main class="flex-1 pt-16 md:pt-20" style="view-transition-name: main;">
+        <slot />
+      </main>
+      <Footer />
+    </NavigationProvider>
+  </body>
+</html>

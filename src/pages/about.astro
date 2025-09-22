@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { teamMembers } from '../data/teamMembers.ts';
+
+import { AboutHero } from '@/components/sections/about-hero';
+import AboutMission from '@/components/sections/about-mission';
+import BlogPosts from '@/components/sections/blog-posts';
+import OurValues from '@/components/sections/our-values';
+import Team from '@/components/sections/team';
+import WhySonic from '@/components/sections/why-sonic';
+import { Button } from '@/components/ui/button';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+
+const blogPosts = await getCollection('blog');
+---
+
+<DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <!--<AboutHero />-->
+  <Team />
+  <AboutMission />
+  <!--<OurValues />
+  <div class="py-10 md:pt-14 lg:pt-20">
+    <WhySonic />
+  </div>
+  <div class="pb-10 md:pb-14 lg:pb-20">
+    <BlogPosts posts={blogPosts.slice(0, 3)} client:load />
+  </div> -->
+</DefaultLayout>

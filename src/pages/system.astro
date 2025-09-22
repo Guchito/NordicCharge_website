@@ -1,0 +1,20 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import Hardware from '@/components/sections/hardware';
+import ProductFeatures from '@/components/sections/product-features';
+import ProductHero from '@/components/sections/product-hero';
+import ProductIntro from '@/components/sections/product-intro';
+import Testimonials from '@/components/sections/product-testimonials';
+import ServiceFeatures from '@/components/sections/service-features';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+---
+
+<DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <!--  <ProductHero client:load /> -->
+  <ProductIntro client:load />
+  <Hardware client:load />
+  <!-- <Testimonials client:load /> -->
+  <ProductFeatures client:load />
+  <!-- <ServiceFeatures client:load /> -->
+</DefaultLayout>
