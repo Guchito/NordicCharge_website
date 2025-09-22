@@ -2,14 +2,13 @@
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
+import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
-import vercel from '@astrojs/vercel';
-
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://sonic-astro-template.vercel.app',
+  site: 'https://nc-new-website.vercel.app/',
   integrations: [mdx(), sitemap(), react()],
 
   vite: {
